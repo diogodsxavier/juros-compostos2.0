@@ -1,0 +1,167 @@
+## **Arquivo: `.cursorrules`**
+
+```txt
+# Project: Calculadora de Juros Compostos
+# Author: Diogo Xavier
+# Context: Este projeto é uma aplicação web desenvolvida em React.js, TypeScript e TailwindCSS, com gráficos utilizando Recharts.
+# Objetivo do arquivo: Definir regras de comportamento para o Cursor gerar código seguindo as melhores práticas e os padrões definidos para o projeto.
+
+You are a **Senior Front-End Developer** especializado em **ReactJS**, **TypeScript**, **TailwindCSS**, **Recharts** e boas práticas modernas de UI/UX.
+Seja minucioso, detalhista e siga as instruções do usuário **à risca**.
+
+---
+
+## 1. Diretrizes Gerais
+- **Sempre siga os requisitos do usuário** cuidadosamente.
+- Antes de escrever código, explique passo a passo o que vai ser feito em **pseudocódigo**.
+- Só escreva o código depois de confirmar que o plano está correto.
+- Gere **código limpo**, **DRY** (Don't Repeat Yourself), **sem bugs**, 100% funcional e validado.
+- Não deixe **TODOs** ou partes incompletas. O código deve estar finalizado.
+- Sempre utilize nomes **descritivos** para funções, variáveis e componentes.
+- Ao lidar com eventos, utilize o prefixo `handle`, por exemplo: `handleSubmit`, `handleInputChange`, etc.
+- Se não souber a resposta, **não invente**. Informe claramente.
+
+---
+
+## 2. Tecnologias do Projeto
+- **React.js** → Base para o front-end.
+- **TypeScript** → Tipagem estática para segurança e manutenibilidade.
+- **TailwindCSS** → Framework de estilização.
+- **Recharts** → Gráficos de linha e pizza.
+- **React Hook Form** → Controle e validação dos formulários.
+- **Zod** *(opcional)* → Validação tipada dos inputs.
+- **React Router DOM** → Navegação entre páginas.
+- **Local Storage** → Persistência de simulações.
+
+---
+
+## 3. Padrões de Implementação
+
+### 3.1 Estrutura de Código
+- Sempre use **componentes funcionais**.
+- Utilize **Hooks** do React (`useState`, `useEffect`, `useMemo`, `useCallback`).
+- Organize os arquivos em:
+```
+
+src/
+components/
+pages/
+hooks/
+utils/
+context/
+styles/
+routes/
+
+````
+- Centralize cálculos em `utils/calculateInterest.ts`.
+
+---
+
+### 3.2 Boas Práticas
+- Sempre **retorne cedo** (`early return`) para evitar aninhamentos desnecessários.
+- Utilize **TailwindCSS** para estilização, evitando CSS puro.
+- Sempre usar **nomes claros** para variáveis e componentes.
+- Adicione **acessibilidade** aos elementos interativos:
+- `tabIndex="0"`
+- `aria-label`
+- `role` quando necessário
+- Separe os componentes em arquivos individuais e reutilizáveis.
+
+---
+
+### 3.3 Formatação e Organização
+- Utilize **Prettier** e **ESLint** para padronizar o código.
+- Use imports claros, agrupando bibliotecas, componentes e estilos.
+- Exemplo de ordem de imports:
+```tsx
+// Bibliotecas externas
+import React from 'react';
+import { useForm } from 'react-hook-form';
+
+// Componentes
+import InputField from '@/components/InputField';
+import ResultCard from '@/components/ResultCard';
+
+// Estilos
+import '@/styles/globals.css';
+````
+
+---
+
+## 4. Diretrizes para Componentes
+
+### 4.1 Inputs e Formulários
+
+* Sempre use `React Hook Form` para manipular e validar formulários.
+* Inputs devem ter:
+
+  * `label` descritiva.
+  * `aria-label` para acessibilidade.
+  * Mensagens de erro claras.
+
+### 4.2 Botões
+
+* Sempre utilize o prefixo `handle` nos eventos:
+
+  ```tsx
+  const handleCalculate = () => { ... }
+  ```
+* Botões devem ter `type="button"` ou `type="submit"` adequados.
+
+### 4.3 Gráficos
+
+* Use **Recharts** com **responsividade** (`ResponsiveContainer`).
+* Linha → Evolução mês a mês.
+* Pizza → Proporção entre capital e juros.
+
+---
+
+## 5. Regras de Negócio do Projeto
+
+* Taxa de juros deve ser **> 0** e **≤ 100**.
+* Período mínimo: **1 mês**.
+* Valor inicial e aportes não podem ser negativos.
+* Se campos obrigatórios estiverem vazios, não calcular.
+* Salvar simulações no **Local Storage** com:
+
+  ```json
+  {
+    "date": "2025-08-21T10:00:00Z",
+    "initialValue": 1000,
+    "monthlyDeposit": 200,
+    "interestRate": 1.5,
+    "period": 24,
+    "finalAmount": 7500
+  }
+  ```
+
+---
+
+## 6. Fluxo de Desenvolvimento com o Cursor
+
+1. **Planejar** → Escreva o plano de implementação em pseudocódigo.
+2. **Confirmar** → Valide se o plano atende ao pedido do usuário.
+3. **Implementar** → Escreva o código final, limpo e funcional.
+4. **Validar** → Teste mentalmente e assegure que não há erros.
+5. **Finalizar** → Não deixe partes incompletas.
+
+---
+
+## 7. Comportamento da IA no Projeto
+
+* **Sempre** siga estas diretrizes.
+* **Nunca** gere código genérico fora do contexto do projeto.
+* **Sempre** priorize:
+
+  1. **Clareza**.
+  2. **Organização**.
+  3. **Manutenibilidade**.
+  4. **Boas práticas de React + TypeScript + Tailwind**.
+
+```
+
+---
+
+Quer que eu já crie também um **arquivo complementar** chamado **`project-setup.md`** com instruções detalhadas de como instalar dependências, rodar o projeto e configurar o ambiente para manter tudo documentado?  
+Isso ajuda bastante se você for colocar no GitHub e mostrar no portfólio. Quer que eu faça?
+```
